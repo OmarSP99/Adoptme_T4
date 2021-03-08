@@ -1,3 +1,5 @@
+let.config = require('./config/passport');
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -8,6 +10,8 @@ const hbs = require('express-handlebars');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
+const profileRouter = require('./routes/profile');
 
 const app = express();
 
@@ -23,8 +27,11 @@ app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
+app.use('/', authRouter);
 app.use('/backend/users', usersRouter);
+app.use('/', profileRouter);
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

@@ -7,9 +7,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <title>{{title}}</title>
+  <style>
+    nav {
+      background-color: rgb(97, 104, 84);
+      height: 30px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .nav-element {
+     height: 100%;
+     display: inline-block;
+     background-color: rgb(136, 139, 130);
+     width: 50px;
+
+    }
+    h3 {
+       margin: 0;
+    }
+    a {
+       color:black;
+       text-decoration: none;  
+   }
+  </style>
 </head>
 
 <body>
+
+  <nav>
+    <div class="nav-element">
+      <h3> <a href="/">Inicio</a> </h3> 
+    </div>
+    <div class="nav-element">
+      <h3> <a href="/auth/login">Login</a> </h3> 
+    </div>
+  </nav>
+
+  <br>
   <h1 class="header">Adopt me</h1>
   {{{ body }}}
 </body>

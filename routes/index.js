@@ -1,3 +1,4 @@
+
 const express = require('express');
 const data = require('../data/data.json');
 const axios = require('axios');
@@ -34,7 +35,7 @@ router.get('/', async function(req, res, next) {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/index/:id', (req, res) => {
   const {id} = req.params;
   const {url} = req.query;
   const animal = animals.find(animal => animal.id == id);
@@ -43,3 +44,4 @@ router.get('/:id', (req, res) => {
 });
 
 module.exports = router;
+
